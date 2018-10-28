@@ -2,7 +2,7 @@
 Contributors: mathieuhays
 Tags: menu, duplicate, navigation
 Requires at least: 4.0
-Tested up to: 4.9.8
+Tested up to: 5.0.0
 Stable tag: 1.0.0
 License: GPLv2 or later
 
