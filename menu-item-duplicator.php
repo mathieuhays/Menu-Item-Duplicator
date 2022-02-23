@@ -16,12 +16,11 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit;
 }
 
+define( 'MENU_ITEM_DUPLICATOR_VERSION', '1.0.1' );
+
 if ( ! is_admin() ) {
 	return;
 }
-
-define( 'MENU_ITEM_DUPLICATOR_VERSION', '1.0.0' );
-
 
 function menu_item_duplicator_init() {
 	load_plugin_textdomain(
