@@ -6,15 +6,25 @@ Tested up to: 5.9.1
 Stable tag: 1.0.1
 License: GPLv2 or later
 
-Menu Item Duplicator enhances your menu administration by allowing to duplicate menu items.
+Allow you to duplicate menu items and their sub-elements in Appearance > Menus
 
 == Description ==
 
-This plugin allows you to duplicate a menu item, sub-items included
+This plugin allows you to duplicate a menu item, sub-items included in Appearance > Menus.
+
+== Frequently Asked Questions ==
+
+= How does it work? =
+
+The "Duplicate" action is added to each menu item under Appearance > Menus. Clicking on it will duplicate the item and all its sub-elements.
+
+== Screenshots ==
+
+1. Duplicate action shown in context
 
 == Changelog ==
 
-= 1.0.1
+= 1.0.1 =
 *Release Date - 23 February 2022*
 
 * Fix missing description when duplicating
