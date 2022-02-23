@@ -16,16 +16,32 @@
         populateActions($markup);
     }
 
+
+  /**
+   *
+   * @param $element
+   * @returns {jQuery}
+   */
+  function getItemDataFixed($element) {
+    var itemData = $element.getItemData(),
+      id = $element.find('.menu-item-data-db-id').val();
+
+      itemData['menu-item-description'] = $element.find('#edit-menu-item-description-' + id).val();
+
+      return itemData;
+  }
+
     function onDuplicate() {
         var $element = $(this).closest('li'),
-            menuItem = $element.getItemData(),
+            menuItem = getItemDataFixed($element),
             menuItemID = menuItem['menu-item-db-id'],
             items = { '-1': menuItem },
             itemIndex = 1,
             list = [];
 
         list.push({
-            relativeDepth: 0
+            relativeDepth: 0,
+            description: menuItem['menu-item-description'],
         });
 
         menuItem['menu-item-db-id'] = 0;
@@ -45,7 +61,7 @@
                 break;
             }
 
-            itemData = $next.getItemData();
+            itemData = getItemDataFixed($next);
 
             // Loop through our parents, start with the last one
             for (var i = parentIds.length - 1; i >= 0; i--) {
@@ -99,11 +115,13 @@
                 listItem = list[index];
                 index++;
 
-                if ( listItem.relativeDepth < 1 ) {
-                    return true;
+                if ( listItem.description ) {
+                    $li.find('.edit-menu-item-description').val(listItem.description);
                 }
 
-                $li.shiftHorizontally(listItem.relativeDepth);
+                if ( listItem.relativeDepth > 0 ) {
+                    $li.shiftHorizontally(listItem.relativeDepth);
+                }
             });
 
             $( document ).trigger( 'menu-item-added', [ $markup ] );
