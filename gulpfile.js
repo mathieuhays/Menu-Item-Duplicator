@@ -2,21 +2,23 @@
  * Gulp Config
  */
 
-const PATH = require('path');
-const GULP = require('gulp');
-const UGLIFY = require('gulp-uglify');
-const RENAME = require('gulp-rename');
-const GUTIL = require('gulp-util');
+/* global require, __dirname */
 
-const JS_FILES = [ PATH.join( __dirname, 'src', '*.js' ) ];
-const JS_OUT = PATH.join(__dirname, 'dist');
+const { join } = require('path');
+const { src, dest } = require('gulp');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+const log = require('fancy-log');
 
-GULP.task('js:build:production', () => {
-    GULP.src(JS_FILES)
-        .pipe(UGLIFY().on('error', GUTIL.log))
-        .pipe(RENAME({ suffix: '.min' }))
-        .pipe(GULP.dest(JS_OUT));
-});
+const JS_FILES = [ join(__dirname, 'src', '*.js') ];
+const JS_OUT = join(__dirname, 'dist');
 
-GULP.task('build', [ 'js:build:production' ]);
-GULP.task('default', [ 'build' ]);
+function buildProductionScripts() {
+  return src(JS_FILES)
+    .pipe(uglify().on('error', log))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest(JS_OUT));
+}
+
+exports.build = buildProductionScripts;
+exports.default = buildProductionScripts;
