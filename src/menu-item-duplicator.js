@@ -24,9 +24,11 @@
    */
   function getItemDataFixed($element) {
     var itemData = $element.getItemData(),
-      id = $element.find('.menu-item-data-db-id').val();
+      id = $element.find('.menu-item-data-db-id').val(),
+      $target = $element.find('#edit-menu-item-target-' + id);
 
       itemData['menu-item-description'] = $element.find('#edit-menu-item-description-' + id).val();
+      itemData['menu-item-target'] = $target.is(':checked') ? $target.val() : '';
 
       return itemData;
   }
