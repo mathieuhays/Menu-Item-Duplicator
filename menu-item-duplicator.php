@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Menu Item Duplicator
  * Description: Enable duplication of menu items (also duplicates sub-elements)
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Mathieu Hays
  * Author URI: https://mathieuhays.co.uk
  * License: GPL2
@@ -16,7 +16,7 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit;
 }
 
-define( 'MENU_ITEM_DUPLICATOR_VERSION', '1.0.1' );
+define( 'MENU_ITEM_DUPLICATOR_VERSION', '1.0.2' );
 
 if ( ! is_admin() ) {
 	return;

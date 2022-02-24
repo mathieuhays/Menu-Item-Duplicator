@@ -3,7 +3,7 @@ Contributors: mathieuhays
 Tags: menu, duplicate, navigation
 Requires at least: 4.0
 Tested up to: 5.9.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 
 Allow you to duplicate menu items and their sub-elements in Appearance > Menus
@@ -23,6 +23,11 @@ The "Duplicate" action is added to each menu item under Appearance > Menus. Clic
 1. Duplicate action shown in context
 
 == Changelog ==
+
+= 1.0.2 =
+*Release Date - 24 February 2022*
+
+* Fix an issue where the "new tab" checkbox would always be checked when an item is duplicated
 
 = 1.0.1 =
 *Release Date - 23 February 2022*
