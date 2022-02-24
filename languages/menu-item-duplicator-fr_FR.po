@@ -29,11 +29,3 @@ msgid "Enable duplication of menu items (also duplicates sub-elements)"
 msgstr ""
 "Permet de dupliquer les éléments de navigation (ainsi que leurs sous-"
 "éléments)"
-
-#. Author of the plugin/theme
-msgid "Mathieu Hays"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://mathieuhays.co.uk"
-msgstr ""
